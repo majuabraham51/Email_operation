@@ -1,0 +1,43 @@
+# application.yml
+
+spring:
+  profiles:
+    active: "outlook"
+  main:
+    banner-mode: "off"
+server:
+  port : 8081
+---
+#outlook environment
+spring:
+  profiles: outlook
+  mail:
+    host: smtp.office365.com
+    username: mabraham@davinta.com
+    password: Jinu@143
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+---
+#gmail environment
+spring:
+  profiles: gmail
+  mail:
+    default-encoding: UTF-8
+    host: smtp.gmail.com
+    username: learningtestasgust@gmail.com
+    password: Alti@123
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    protocol: smtp
+    test-connection: true
+    
